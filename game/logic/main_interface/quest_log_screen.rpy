@@ -48,6 +48,21 @@ init python:
 'Evelin': 'Caretop', 
 'Marta': 'Scott'}
 
+    def add_to_favorite(name, add):
+        if add:
+            favorites.append(name)
+        else:
+            favorites.remove(name)
+
+    def order_by_favorite(chs):
+        list1, list2 = [], []
+        for ch in chs:
+            if ch[5:] in favorites:
+                list1.append(ch)
+            else:
+                list2.append(ch)
+        return list1 + list2
+
     quest_log_menu_now = 'CALENDAR'
 screen quest_log_screen(open_menu = 'CALENDAR'):
     zorder 220
@@ -405,7 +420,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                                             image 'characteristics_statistic_point'
                                             image Text('placeholder placehol', size = 14, font='fonts/h_font.ttf', color = '#FFFFFF') alpha .7
                                             image 'characteristics_statistic_line' yalign .5
-                                            image Text('12', size = 14, font='fonts/h_font.ttf', color = '#FFFFFF') alpha .7
+                                            image Text('123', size = 14, font='fonts/h_font.ttf', color = '#FFFFFF') alpha .7
 
 
             if menu_now == 'CHARACTER INFO':
@@ -630,6 +645,16 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
 
 
                                       font='fonts/h_font.ttf', size = 10, color ='#E5D7FF', alpha = .8)
+
+#                                 if log_name in favorites:
+#                                     imagebutton auto 'main_interface/quest_log/added_to_favorite_%s.png':
+#                                         xalign .95 yalign .2
+#                                         action Function(add_to_favorite, name=log_name, add=False)
+#                                 else:
+#                                     if len(favorites) < 5:
+#                                         imagebutton auto 'main_interface/quest_log/favorite_%s.png':
+#                                             xalign .99 yalign .2
+#                                             action Function(add_to_favorite, name=log_name, add=True)
                                     
                                     
             if menu_now == 'CALENDAR':
