@@ -377,6 +377,7 @@ init python:
 
     log_message_p = {
     'Victoria':[
+        "Victoria's waiting for students in her class. It's probably the one where I've passed my exam.",
         "Victoria won't let me into her lectures until I get my books to Library.",
         "I can try to get Victoria to like me by showing interest in her lectures.",
         "Victoria suggested that I find my own source of power. I wish I knew where to look...",
@@ -399,6 +400,7 @@ init python:
 ],
 
     'Haley':[
+"I should catch up with Haley. She's probably studying already.",
 "Haley promised that she would be happy to chat in the morning before Victoria's class.",
 "Haley will be waiting for me in her room in the evening. I hope it's a date!",
 "Haley is getting ready for Victoria's private classes, I gotta find out what progress she's made. 'll try to talk to her in the morning before the lecture.",
@@ -412,6 +414,7 @@ init python:
 
 
     'Samantha':[
+"",
 "Samantha suggested we meet in the living room in the morning.",
 "Sam told me that nurse could heal my leg when she gets back from her vacation. She also seemed distressed because new spells were too hard for her. I think I'll know more if we have this kind of morning chit-chat more often.",
 "Samantha expects me to talk to Jacob about her problem.",
@@ -422,6 +425,7 @@ init python:
 
 
     'Audrey':[
+"She's in Leonheart too, so I can probably meet her in our campus in the morning.",
 "Audrey only talks to men who can take her to a restaurant.",
 "I've helped Audrey get milk for her morning coffee, and I hope it'll melt some ice between us. Audrey will be waiting for me in the living room in the evening. I wonder if that's a hint.",
 "I've tried to get Sam and Audrey to tell me if they're hiding something, but they told me nothing. Audrey's story for this version has come to an end.",
@@ -477,7 +481,13 @@ init python:
     'Jacob':[
 "Jacob will only admit me to the dueling club when I learn a fighting spell.",
 "I was accepted into the dueling club, so I can come to the Academy lobby every night and take part in duels. + Jacob's story for this version has come to an end.",
-]
+],
+    'Arthur':[
+"",
+"Arthur told me that if our house wins the weekly competition, I can visit Dale. I wonder what's there?",
+"Arthur told us that every week winning house gets to go to Dale. I have to win to check out what opportunities do I have there.",
+"When I traveled to Dale, Katrina invaded my mind and tortured me. I don't know how she did it, but I have to find out how to stop it.",
+],
     }
 screen notes_screen():
     zorder 220

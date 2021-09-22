@@ -145,16 +145,17 @@ label after_load:
     $ MessageEXMP = []
     if not hasattr(store, 'p_variables'):
         $ p_variables = {
+'Samantha': 1,
+'Elijah':   1,
+'Arthur':   1,
 'Victoria': 0,
 'Sabrina':  0,
 'Haley':    0,
-'Samantha': 0,
 'Audrey':   0,
 'Lily':     0,
 'Naomi':    0,
 'Amelie':   0,
 'Molly':    0,
-'Elijah':   0,
 'Jacob':    0,
 }
     if not hasattr(store, 'wins_house'):

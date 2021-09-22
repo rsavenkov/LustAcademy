@@ -1,6 +1,6 @@
 label quest_log_label:
     $ renpy.call(qstt)
-    show screen main_interface 
+    show screen main_interface
     show screen show_hide_locations_2
     hide screen black_tmp_screen_menu
     with Dissolve(.5)
@@ -9,43 +9,43 @@ label quest_log_label:
     jump main_interface_label
 init python:
     place_holder_text  = 'placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholderplaceholder placeholder placeholder placeholder placeholder placeholder'
-    surnames           = {'Adele': 'Cuill', 
-'Amelie': 'Earhart', 
-'Arthur': 'Doorman Iv', 
-'Ashley': 'Rose', 
-'Audrey': 'Burns', 
-'Carter': 'Brown', 
-'Diego': 'Faradenza', 
-'Don': 'Rose', 
-'Elijah': 'Bloom', 
-'Faith': 'Whistley', 
-'Frida': 'Crowhive', 
-'Gabriella': 'Leal', 
-'Giant': '', 
-'Gordon': 'Chompski', 
-'Grace': ' Sherman', 
-'Haley': 'Ranger', 
-'Jacob': 'Frollo', 
-'Jaina': 'Martenden', 
-'Jill': 'Whistley', 
-'Joshi': 'Backs', 
-'Katrina': 'Adderin', 
-'Leona': 'Leonheart', 
-'Lily': 'Hebi', 
-'Lucy': 'Altidore', 
-'Mina': 'Harper', 
-'Molly': 'Maeve', 
-'Naomi': 'Kimba', 
-'Olivia': 'Wild-Rose', 
-'Romul': 'Mobs', 
-'Sabrina': 'Spellman', 
-'Sadira': 'Adala', 
-'Samantha': 'Rose', 
-'Vanessa': 'Le Court', 
-'Victoria': 'Lapis', 
-'Willow': 'Chompski', 
-'Mushroom Girl': '', 
-'Evelin': 'Caretop', 
+    surnames           = {'Adele': 'Cuill',
+'Amelie': 'Earhart',
+'Arthur': 'Doorman Iv',
+'Ashley': 'Rose',
+'Audrey': 'Burns',
+'Carter': 'Brown',
+'Diego': 'Faradenza',
+'Don': 'Rose',
+'Elijah': 'Bloom',
+'Faith': 'Whistley',
+'Frida': 'Crowhive',
+'Gabriella': 'Leal',
+'Giant': '',
+'Gordon': 'Chompski',
+'Grace': ' Sherman',
+'Haley': 'Ranger',
+'Jacob': 'Frollo',
+'Jaina': 'Martenden',
+'Jill': 'Whistley',
+'Joshi': 'Backs',
+'Katrina': 'Adderin',
+'Leona': 'Leonheart',
+'Lily': 'Hebi',
+'Lucy': 'Altidore',
+'Mina': 'Harper',
+'Molly': 'Maeve',
+'Naomi': 'Kimba',
+'Olivia': 'Wild-Rose',
+'Romul': 'Mobs',
+'Sabrina': 'Spellman',
+'Sadira': 'Adala',
+'Samantha': 'Rose',
+'Vanessa': 'Le Court',
+'Victoria': 'Lapis',
+'Willow': 'Chompski',
+'Mushroom Girl': '',
+'Evelin': 'Caretop',
 'Marta': 'Scott'}
 
     def add_to_favorite(name, add):
@@ -76,7 +76,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
         action SetVariable('quest_log_menu_now', 'CALENDAR'), Hide('quest_log_screen', transition = Dissolve(.5)), Function(renpy.play, channel = 'sound', filename = 'audio_ep2/Gameplay/snd_invenoty_close.mp3')
 
     vbox:
-        xalign .5 
+        xalign .5
         yalign .5
         hbox:
             for i in ('CHARACTER INFO', 'CALENDAR', 'CHARACTERISTICS' ):
@@ -97,25 +97,25 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                 image 'quest_log_exit_0'
                 imagebutton:
                     idle  'main_interface/quest_log/quest_log_exit.png'
-                    hover im.MatrixColor('main_interface/quest_log/quest_log_exit.png', im.matrix.brightness(.2)) 
+                    hover im.MatrixColor('main_interface/quest_log/quest_log_exit.png', im.matrix.brightness(.2))
                     action Hide('quest_log_screen', transition = Dissolve(.5)), Function(renpy.play, channel = 'sound', filename = 'audio_ep2/Gameplay/snd_invenoty_close.mp3')
 
             xpos 3
             ypos 4
         viewport:
-                
+
             xmaximum 1278
             ymaximum 670
             xpos 2
             image '#0000'
 
-            
+
             imagebutton:
                 idle   '#0000'
                 hover  '#0000'
                 action NullAction()
 
-        
+
 
 
 
@@ -179,7 +179,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         xmaximum 390+20
                         ymaximum 95
                         if hasattr(store, 'has_incendio'):
-                            image 'mini_games/duels/new/incendio_icon.png' 
+                            image 'mini_games/duels/new/incendio_icon.png'
                         else:
                             image 'duels_locked'
                         viewport:
@@ -196,7 +196,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         xmaximum 390+20
                         ymaximum 95
                         if hasattr(store, 'has_episkey'):
-                        
+
                             image 'mini_games/duels/new/episkey_icon.png'
                         else:
                             image 'duels_locked'
@@ -220,7 +220,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                     ymaximum 50
                     image '#0000'
                     text '[Name] [Surname]' size 36 color '#FFD4AD' font 'fonts/h_font.ttf'
-              
+
                 # viewport:
                 #     xpos 165
                 #     ypos 80
@@ -279,15 +279,15 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         add '#0000'
                         if ghg_adderin == 1:
                             add Text(
-                                str(ghg_adderin) + get_homes_great_number[ghg_adderin], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_adderin) + get_homes_great_number[ghg_adderin],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 24,
                                 color = '#FFEEDE'
                                 ) xalign .5 yalign .5
                         else:
                             add Text(
-                                str(ghg_adderin) + get_homes_great_number[ghg_adderin], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_adderin) + get_homes_great_number[ghg_adderin],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 18,
                                 color = '#DAE0FF'
                                 ) alpha .5 xalign .5 yalign .5
@@ -299,15 +299,15 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         add '#0000'
                         if ghg_leonheart == 1:
                             add Text(
-                                str(ghg_leonheart) + get_homes_great_number[ghg_leonheart], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_leonheart) + get_homes_great_number[ghg_leonheart],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 24,
                                 color = '#FFEEDE'
                                 ) xalign .5 yalign .5
                         else:
                             add Text(
-                                str(ghg_leonheart) + get_homes_great_number[ghg_leonheart], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_leonheart) + get_homes_great_number[ghg_leonheart],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 18,
                                 color = '#DAE0FF'
                                 ) alpha .5 xalign .5 yalign .5
@@ -321,15 +321,15 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         add '#0000'
                         if ghg_crowhive == 1:
                             add Text(
-                                str(ghg_crowhive) + get_homes_great_number[ghg_crowhive], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_crowhive) + get_homes_great_number[ghg_crowhive],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 24,
                                 color = '#FFEEDE'
                                 ) xalign .5 yalign .5
                         else:
                             add Text(
-                                str(ghg_crowhive) + get_homes_great_number[ghg_crowhive], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_crowhive) + get_homes_great_number[ghg_crowhive],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 18,
                                 color = '#DAE0FF'
                                 ) alpha .5 xalign .5 yalign .5
@@ -341,15 +341,15 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         add '#0000'
                         if ghg_martenden == 1:
                             add Text(
-                                str(ghg_martenden) + get_homes_great_number[ghg_martenden], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_martenden) + get_homes_great_number[ghg_martenden],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 24,
                                 color = '#FFEEDE'
                                 ) xalign .5 yalign .5
                         else:
                             add Text(
-                                str(ghg_martenden) + get_homes_great_number[ghg_martenden], 
-                                font  = 'fonts/h_font.ttf', 
+                                str(ghg_martenden) + get_homes_great_number[ghg_martenden],
+                                font  = 'fonts/h_font.ttf',
                                 size  = 18,
                                 color = '#DAE0FF'
                                 ) alpha .5 xalign .5 yalign .5
@@ -386,7 +386,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         ypos 525
                         yalign 1.0
                     image 'ch_duel_crowhive' xpos 188+79 ypos 490-int(int((float(homes['Martenden']['now'])/350.0)*353)) zoom .5
-                    
+
                 viewport:
                     xpos 870
                     ypos 47
@@ -403,12 +403,12 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                                 imagebutton:
                                     if stats != i:
                                         idle  'characteristics_statistic_button_0'
-                                        hover im.MatrixColor('main_interface/quest_log/characteristics_statistic_button_0.png', im.matrix.brightness(.2)) 
+                                        hover im.MatrixColor('main_interface/quest_log/characteristics_statistic_button_0.png', im.matrix.brightness(.2))
 
                                         action SetScreenVariable('stats', i)
                                     else:
                                         idle  'characteristics_statistic_button_1'
-                                        hover im.MatrixColor('main_interface/quest_log/characteristics_statistic_button_1.png', im.matrix.brightness(.2)) 
+                                        hover im.MatrixColor('main_interface/quest_log/characteristics_statistic_button_1.png', im.matrix.brightness(.2))
 
                                         action SetScreenVariable('stats', None)
                                 text 'Placeholder' size 18 color '#4D4E65' font 'fonts/h_font.ttf' yalign .5 xpos 5
@@ -430,29 +430,27 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
 
                 default char_now         = log_message.items()[0][0][5:]
 
-                default ch_in_circle_now = 0
-
-
-
+                default last_step = p_variables[str(char_now).title()]
+                default curr_step = last_step - 1
 
                # if char_now.title() in quest_log_big_avatars:
                #     image 'main_interface/quest_log/quest_log_avatars/'+char_now.title()+'_big.png' xalign .22 alpha .95
-                
+
                 #else:
                 image 'main_interface/quest_log/quest_log_avatars/'+char_now.title()+'_big.png' xalign .17 alpha .95
                 viewport:
                     xpos 540
                     xmaximum 380
-                    ymaximum 80 
+                    ymaximum 80
                     image '#0000'
-                    text char_now + ' ' + surnames.get(char_now.title(), ''): 
+                    text char_now + ' ' + surnames.get(char_now.title(), ''):
                         xalign .5 yalign .5
                         if colors_names.get(char_now.title()):
                             color colors_names[char_now.title()]
                         else:
                             color '#FFBA7B'
                         size  40
-                        font  'fonts/h_font.ttf' 
+                        font  'fonts/h_font.ttf'
                 viewport:
                     xpos 570
                     ypos 100
@@ -460,9 +458,9 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                     ymaximum 200
                     image '#0000'
                     if chars_gender_table.get(char_now.title()):
-                        
+
                         image Text(chars_gender_table[char_now.title()]['description'], outlines = [(1, "#000", 0, 0)], color = '#FFEEDE', size = 22, font = 'fonts/h_font.ttf')
-                    
+
                     else:
                         text place_holder_text:
                             color '#FFEEDE'
@@ -478,9 +476,9 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                 #     vbox xpos 5:
                 #         hbox:
                 #             image Text('Gender: ', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf') alpha .38
-                            
+
                 #             if chars_gender_table.get(char_now.title()):
-                                
+
 
                 #                 image Text(chars_gender_table[char_now.title()]['gender'], color = '#FFEEDE', size = 20, font = 'fonts/h_font.ttf'):
                 #                     if 'shemale' in chars_gender_table[char_now.title()]['gender'].lower():
@@ -489,13 +487,13 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                 #             image Text('Age: ', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf')    alpha .38
                 #             if chars_gender_table.get(char_now.title()):
                 #                 image Text(str(int(chars_gender_table[char_now.title()]['age'])), color = '#FFEEDE', size = 20, font = 'fonts/h_font.ttf')
-                        
+
                 #         image Text('Height:', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf') alpha .38
                 #         image Text('Hair:', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf')   alpha .38
                 #         image Text('Eyes:', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf')   alpha .38
                 #         image Text('P-rs:', color = '#0F1621', size = 20, font = 'fonts/h_font.ttf')   alpha .38
-                
-                viewport: 
+
+                viewport:
                     xpos 560 ypos 400
                     xmaximum 710
                     ymaximum 40
@@ -504,78 +502,39 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         ) is not None and (
                         p_variables.get(str(char_now).title()) is not None) and (
                         p_variables[str(char_now).title()] < len(log_message_p[str(char_now).title()])
-                        ):      
+                        ):
                         #hbox:
 
-                        #default ch_in_circle_now = p_variables[str(char_now).title()]
-                        $ mxrange = len(log_message_p[char_now.title()])-1
-                        for i in xrange(mxrange):
+
+                        if p_variables.get(str(char_now).title()) != 0:
+                            $ mxrange = len(log_message_p[char_now.title()])
+                            for i in xrange(mxrange):
+                                viewport:
+                                    xmaximum 55
+                                    ymaximum 52
+                                    image '#0000'
+                                    imagebutton:
+                                        xalign .5 yalign .5
+                                        if last_step >= i + 1:
+                                            idle im.MatrixColor('main_interface/quest_log/character_info_circle.png', im.matrix.brightness(.3))
+                                            action SetScreenVariable('curr_step', i)
+                                        else:
+                                            idle 'character_info_circle'
+                                    text str(i+1) xalign .5 yalign .5
+                                    xalign float(str(1.0/mxrange)[:4])*(i)
+                                    if curr_step == i and curr_step != last_step:
+                                        image 'character_info_elipse' xalign .5 yalign .5
                             viewport:
-                                xmaximum 55
-                                ymaximum 52
-                                image '#0000'
-                                imagebutton:
-                                    xalign .5 yalign .5
-                                    if ch_in_circle_now == i:
-                                        idle im.MatrixColor('main_interface/quest_log/character_info_circle.png', im.matrix.brightness(.3)) 
-                                    
-                                    else:
-                                        idle  'character_info_circle'
-                                    hover im.MatrixColor('main_interface/quest_log/character_info_circle.png', im.matrix.brightness(.3)) 
-                                    if p_variables[str(char_now).title()] >= i:
-                                
-                                        action SetScreenVariable('ch_in_circle_now', i)
-                                    
-                                    else:
-                                        action NullAction()
-                                text   str(i+1): 
-                                    xalign .5 yalign .5 
-                                    if p_variables[str(char_now).title()] == i:
-                                        size 17
-                                        #color '#000'
+                                    xmaximum 55
+                                    ymaximum 52
+                                    image '#0000'
+                                    xalign float(str(1.0/mxrange)[:4])*(i+1)
+                                    imagebutton:
+                                        xalign .5 yalign .5
+                                        idle 'character_info_circle'
+                        else:
+                            $ curr_step = 0
 
-                                    else:
-                                        size 15
-
-                                    font 'fonts/h_font.ttf'
-                                xalign float(str(1.0/mxrange)[:4])*(i)
-                                if p_variables[str(char_now).title()] == i:
-                                    
-                                    image 'character_info_elipse' xalign .5 yalign .5
-                        
-                        viewport:
-                            xmaximum 55
-                            ymaximum 52
-                            image '#0000'
-                            imagebutton:
-                                xalign .5 yalign .5
-                                if ch_in_circle_now == i+1:
-                                    idle im.MatrixColor('main_interface/quest_log/character_info_circle.png', im.matrix.brightness(.3)) 
-                                
-                                else:
-                                    idle  'character_info_circle'
-                                hover im.MatrixColor('main_interface/quest_log/character_info_circle.png', im.matrix.brightness(.3)) 
-                                if p_variables[str(char_now).title()] >= i+1:
-                                
-                                    action SetScreenVariable('ch_in_circle_now', i+1)
-                                else:
-                                    action NullAction()
-                            #image 'character_info_circle' xalign .5 yalign .5
-                            
-                            text   str(i+2): 
-                                xalign .5 yalign .5 
-                                if p_variables[str(char_now).title()] == i+1:
-                                    size 17
-                                    #color '#000'
-
-                                else:
-                                    size 15
-
-                                font 'fonts/h_font.ttf'
-                            xalign float(str(1.0/mxrange)[:4])*(i+1)
-                            if p_variables[str(char_now).title()] == i+1:
-                                
-                                image 'character_info_elipse' xalign .5 yalign .5
                 viewport:
                     xpos 570
                     ypos 450
@@ -586,12 +545,15 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                         ) is not None and (
                         p_variables.get(str(char_now).title()) is not None) and (
                         p_variables[str(char_now).title()] < len(log_message_p[str(char_now).title()])
-                        ):                        
-                        text log_message_p[str(char_now).title()][ch_in_circle_now] font 'fonts/h_font.ttf' size 17 color '#FFEEDE' outlines [(1, "#000", 0, 0)]
-                
+                        ):
+                        if p_variables.get(str(char_now).title()) != 0:
+                            text log_message_p[str(char_now).title()][curr_step + 1] font 'fonts/h_font.ttf' size 17 color '#FFEEDE' outlines [(1, "#000", 0, 0)]
+                        else:
+                            text log_message_p[str(char_now).title()][curr_step] font 'fonts/h_font.ttf' size 17 color '#FFEEDE' outlines [(1, "#000", 0, 0)]
+
                     else:
                         text place_holder_text font 'fonts/h_font.ttf' size 17 color '#FFEEDE'
-                
+
                 viewport:
                     xpos 2
                     xmaximum 226
@@ -603,25 +565,25 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                     pagekeys True
                     vbox xalign .5 ypos 10:
                         spacing 5
-                        for i in log_message:
-                            $ log_name = i[5:]
+                        for i in p_variables.keys():
+                            $ log_name = i
                             viewport:
                                 xmaximum 200
                                 ymaximum 80
-                                imagebutton: 
-                                    idle  'char_card' 
+                                imagebutton:
+                                    idle  'char_card'
 
-                                    hover im.MatrixColor('main_interface/quest_log/char_card.png', im.matrix.brightness(.2)) 
-                                    action SetScreenVariable('char_now', log_name), SetScreenVariable('ch_in_circle_now', p_variables[str(log_name).title()])
+                                    hover im.MatrixColor('main_interface/quest_log/char_card.png', im.matrix.brightness(.2))
+                                    action SetScreenVariable('char_now', log_name), SetScreenVariable('last_step', p_variables[str(log_name).title()]), SetScreenVariable("curr_step", p_variables[str(log_name).title()] - 1)
                                     xalign .5 yalign .5
                                 image 'main_interface/quest_log/quest_log_avatars/' + log_name + '.png' zoom .55 yalign .5 xpos 5
-                                text log_name: 
-                                    size 18 
+                                text log_name:
+                                    size 18
                                     if colors_names.get(log_name):
                                         color colors_names[log_name] #'#B2D09A'
                                     else:
-                                        color '#FFD6AF' 
-                                    xpos 75 ypos 15 
+                                        color '#FFD6AF'
+                                    xpos 75 ypos 15
                                     font 'fonts/h_font.ttf'
                                 viewport:
                                     xmaximum 100
@@ -638,12 +600,8 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                                     ypos 45
                                     image Text('Progress: ', font='fonts/h_font.ttf', size = 10, color ='#E5D7FF', alpha = .5)
 
-                                    image Text( 
-
-
-                                    str(int(float(p_variables[str(log_name).title()])/(len(log_message_p[log_name.title()])-1)*100.0)) + '%', 
-
-
+                                    image Text(
+                                    str(int(float(p_variables[str(log_name).title()])/(len(log_message_p[log_name.title()])-1)*100.0)) + '%',
                                       font='fonts/h_font.ttf', size = 10, color ='#E5D7FF', alpha = .8)
 
 #                                 if log_name in favorites:
@@ -655,20 +613,20 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
 #                                         imagebutton auto 'main_interface/quest_log/favorite_%s.png':
 #                                             xalign .99 yalign .2
 #                                             action Function(add_to_favorite, name=log_name, add=True)
-                                    
-                                    
+
+
             if menu_now == 'CALENDAR':
                 if not mp.tutorial['CALENDAR']:
 
                     timer .01 action  [Function(set_tutorial, 'CALENDAR'),  SetVariable('tutorial_bb', 0), SetVariable('tmp_time_now', copy.copy(time_now)), SetVariable('time_now', 2), Hide('quest_log_screen'), Show('quest_log_screen'), Show('tutorial_screen', what_tutor= 'CALENDAR', rtrn=False)]
-                    
-                
+
+
                 image 'quest_log_bg' xalign .5# yalign .5
                 viewport:
                     image '#0000'
                     ymaximum 62
                     xmaximum 1200
-                    xalign .5 
+                    xalign .5
                     vbox:
                         xalign .5
                         yalign .5
@@ -676,12 +634,12 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                             color '#91A1CB'
                             font 'fonts/h_font.ttf'
                             size 16
-                            xalign .5 
+                            xalign .5
                         text 'time walking around the locations and searching. Next to the avatars of the characters are icons, the decoding of which is next.':
                             color '#91A1CB'
                             font 'fonts/h_font.ttf'
                             size 16
-                            xalign .5 
+                            xalign .5
                 imagebutton:
                     idle '#0000'
                     hover '#0000'
@@ -745,9 +703,9 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
 
                                                 image 'main_interface/quest_log/quest_log_avatars/'+x[1]+'.png':
                                                     if i < time_now:
-                                                        alpha .2 
+                                                        alpha .2
                                                     xalign .5 yalign .5
-                                            
+
                                             if i >= time_now:
                                                 viewport:
                                                     xalign 1.0
@@ -767,7 +725,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                                                                 if x[3][0] == '!':
                                                                     action [
 
-                                                                SetVariable('time_now', i), 
+                                                                SetVariable('time_now', i),
                                                                 Hide('quest_log_screen'),
                                                                 Function(change_location, get_location_for_quest_log(x[3][1:]), up_points_0 = time_now, up_points = i),
                                                                 Function(jump_to_event, x[3][1:], False, False),
@@ -775,7 +733,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
                                                                 else:
                                                                     action [
 
-                                                                SetVariable('time_now', i), 
+                                                                SetVariable('time_now', i),
                                                                 Hide('quest_log_screen'),
                                                                 Function(change_location, x[3], up_points_0 = time_now, up_points = i),
                                                                 ]
@@ -798,7 +756,7 @@ screen quest_log_screen(open_menu = 'CALENDAR'):
 
             #     xalign .985
             #     ypos 4
-#This route is not available at this time of the day. 
+#This route is not available at this time of the day.
 #Chosing this option will lead to a time skip. Continue?
 
 screen quest_log_screen_warning(x, i):
@@ -810,7 +768,7 @@ screen quest_log_screen_warning(x, i):
     if x[3][0] == '!':
         $ yes_action = [
 
-        SetVariable('time_now', i), 
+        SetVariable('time_now', i),
         Hide('quest_log_screen'),
         Hide('quest_log_screen_warning'),
         Function(change_location, get_location_for_quest_log(x[3][1:]), up_points_0 = time_now, up_points = i),
@@ -819,7 +777,7 @@ screen quest_log_screen_warning(x, i):
     else:
         $ yes_action = [
 
-        SetVariable('time_now', i), 
+        SetVariable('time_now', i),
         Hide('quest_log_screen'),
         Hide('quest_log_screen_warning'),
         Function(change_location, x[3], up_points_0 = time_now, up_points = i),
@@ -917,23 +875,23 @@ screen quest_log_screen_warning(x, i):
 #                                                 if x[3][0] == '!':
 #                                                     action [
 
-#                                                 SetVariable('time_now', i), 
+#                                                 SetVariable('time_now', i),
 #                                                 Hide('quest_log_screen'),
 #                                                 Function(change_location, get_location_for_quest_log(x[3][1:]), up_points_0 = time_now, up_points = i),
 #                                                 Function(jump_to_event, x[3][1:], False, False),
-                                                
-                                                
-                                                
+
+
+
 #                                                 ]
 #                                                 else:
 #                                                     action [
-                                                
-#                                                 SetVariable('time_now', i), 
+
+#                                                 SetVariable('time_now', i),
 #                                                 Hide('quest_log_screen'),
 #                                                 Function(change_location, x[3], up_points_0 = time_now, up_points = i),
-                                                
-                                                
-                                                
+
+
+
 #                                                 ]
 #                                             add 'quest_log_circle' xalign .5 yalign .5 alpha .2
 #                                     viewport ypos -15:
@@ -950,23 +908,23 @@ screen quest_log_screen_warning(x, i):
 #                                                 if x[3][0] == '!':
 #                                                     action [
 
-#                                                 SetVariable('time_now', i), 
+#                                                 SetVariable('time_now', i),
 #                                                 Hide('quest_log_screen'),
 #                                                 Function(change_location, get_location_for_quest_log(x[3][1:]), up_points_0 = time_now, up_points = i),
 #                                                 Function(jump_to_event, x[3][1:], False, False),
-                                                
-                                                
-                                                
+
+
+
 #                                                 ]
 #                                                 else:
 #                                                     action [
 
-#                                                 SetVariable('time_now', i), 
+#                                                 SetVariable('time_now', i),
 #                                                 Hide('quest_log_screen'),
 #                                                 Function(change_location, x[3], up_points_0 = time_now, up_points = i),
-                                                
-                                                
-                                                
+
+
+
 #                                                 ]
 
 #                                             text str(x[1]) font 'fonts/h_font.ttf' size 10 xalign .5 yalign .5
